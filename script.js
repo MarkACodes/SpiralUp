@@ -13,8 +13,8 @@ function setMapQuery(places) {
     const lat_long = String(latitude) + "," + String(longitude);
 
     mapFrame.setAttribute(
-      "src",
-      `https://www.google.com/maps/embed/v1/search?q=${places}&key=${GOOGLE_MAPS_API_KEY}&center=${lat_long}&zoom=15`
+        "src",
+        `https://www.google.com/maps/embed/v1/search?q=${places}&key=${GOOGLE_MAPS_API_KEY}&center=${lat_long}&zoom=15`
     );
   };
 
@@ -23,7 +23,7 @@ function setMapQuery(places) {
   };
 
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-  
+
 }
 
 btnContainer.addEventListener("click", (e) => {
@@ -43,8 +43,8 @@ const successCallback = (position) => {
   const lat_long = String(latitude) + "," + String(longitude);
 
   mapFrame.setAttribute(
-    "src",
-    `https://www.google.com/maps/embed/v1/search?q=${shelter}&key=${GOOGLE_MAPS_API_KEY}&center=${lat_long}&zoom=15`
+      "src",
+      `https://www.google.com/maps/embed/v1/search?q=${shelter}&key=${GOOGLE_MAPS_API_KEY}&center=${lat_long}&zoom=15`
   );
 };
 

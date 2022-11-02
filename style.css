@@ -1,0 +1,22 @@
+body {
+    /*padding:0% 3% 10% 3%;*/
+    text-align: center;
+}
+
+h1 {
+    color: darkgreen;
+    margin-top: 30px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #444;
+    text-align: center;
+    padding: 6px;
+    margin-left: 10px;
+}
+
+.dark {
+    background-color: #333;
+    color: teal;
+}
