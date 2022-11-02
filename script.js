@@ -6,10 +6,24 @@ mapFrame.setAttribute("src", mapUrl);
 
 debugger;
 function setMapQuery(places) {
-  mapFrame.setAttribute(
-    "src",
-    `https://www.google.com/maps/embed/v1/search?q=${places}&key=${GOOGLE_MAPS_API_KEY}`
-  );
+  const successCallback = (position) => {
+    //console.log(position);
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    const lat_long = String(latitude) + "," + String(longitude);
+
+    mapFrame.setAttribute(
+      "src",
+      `https://www.google.com/maps/embed/v1/search?q=${places}&key=${GOOGLE_MAPS_API_KEY}&center=${lat_long}&zoom=15`
+    );
+  };
+
+  const errorCallback = (error) => {
+    console.log(error);
+  };
+
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  
 }
 
 btnContainer.addEventListener("click", (e) => {
@@ -18,3 +32,24 @@ btnContainer.addEventListener("click", (e) => {
     setMapQuery(getPlaces);
   }
 });
+
+
+// TODO: see how to optimize this code
+const successCallback = (position) => {
+  console.log(position);
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+
+  const lat_long = String(latitude) + "," + String(longitude);
+
+  mapFrame.setAttribute(
+    "src",
+    `https://www.google.com/maps/embed/v1/search?q=${shelter}&key=${GOOGLE_MAPS_API_KEY}&center=${lat_long}&zoom=15`
+  );
+};
+
+const errorCallback = (error) => {
+  console.log(error);
+};
+
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
