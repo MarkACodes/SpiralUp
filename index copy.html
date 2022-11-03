@@ -24,8 +24,9 @@
 <body>
   <section>
     <div class="container d-flex justify-content-center" style="background-color: rgb(173, 194, 230)">
-      <h1>Spiral Up</h1>
+      <h1 id="popoverData" data-content="Popover content" data-placement="bottom" data-trigger="hover" data-toggle="popover">Spiral Up</h1>
     </div>
+
   </section>
   <section class="d-flex justify-content-center">
     <div id="btnContainer" class="container d-flex justify-content-evenly m-5">
@@ -71,6 +72,12 @@
   <script src="dark-mode-toggle.js"></script>
   <!-- <script src="./script.js"></script> -->
   <script type="module" src="./MapRefactorExample/backup_script.js"></script>
+
+  <script>
+    $(function() {
+      $('[data-toggle="popover"]').popover()
+    })
+  </script>
 </body>
 
 </html>
