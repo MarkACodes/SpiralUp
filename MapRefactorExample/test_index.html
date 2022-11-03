@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Place Search Pagination</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- playground-hide -->
+    <!-- <script>
+      const process = { env: {} };
+      process.env.GOOGLE_MAPS_API_KEY =
+        "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg";
+    </script> -->
+    <!-- playground-hide-end -->
+
+    <link rel="stylesheet" type="text/css" href="./test_style.css" />
+    <script src="../keys.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="map"></div>
+      <div id="sidebar">
+        <h2>Results</h2>
+        <ul id="places"></ul>
+        <button id="more">Load more results</button>
+      </div>
+    </div>
+
+    <!-- 
+        The `defer` attribute causes the callback to execute after the full HTML
+        document has been parsed. For non-blocking uses, avoiding race conditions,
+        and consistent behavior across browsers, consider loading using Promises
+        with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+//commit
+    <script
+      id="serviceScript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5a0LIXwUnScWOH7i_4qaTOzvmm2d8_i4&libraries=places"
+    ></script>
+    <script type="module" src="./backup_script.js"></script>
+  </body>
+</html>
