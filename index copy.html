@@ -7,15 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <!-- REMOVE -->
-  <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <!-- REMOVE -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
   <!--    link keys.js-->
-  <script src="keys.js"></script>
+  <script rel="preload" src="keys.js" as="script"></script>
+  <!-- Pre-Load google maps service-->
+  <script rel="preload" src="./MapRefactorExample/backup_script.js" as="script"></script>
+  <script rel="preload" id="serviceScript"></script>
+  <script rel="preload" src="./MapRefactorExample/backup_script.js" as="script"></script>
   <!--  link local stylesheet-->
   <link rel="stylesheet" href="style.css" />
 
-  <script id="serviceScript"></script>
 </head>
 
 
@@ -43,21 +46,21 @@
     </div>
   </section>
 
-  <section >
-  <div class="container d-flex justify-content-center" id="container">
-    <div class="row w-100">
-      <div class="col-md-8" id="map"></div>
+  <section>
+    <div class="container d-flex justify-content-center" id="container">
+      <div class="row w-100">
+        <div class="col-md-8" id="map"></div>
 
-      <div class="col-md-4" id="sidebar">
-        <h2>Results</h2>
-        <ul id="places"></ul>
-        <button id="more">Load more results</button>
+        <div class="col-md-4" id="sidebar">
+          <h2>Results</h2>
+          <ul id="places"></ul>
+          <button id="more">Load more results</button>
+        </div>
       </div>
     </div>
-  </div>
 
 
-  <!--        TODO SWITCH "google maps api for api key in keys.js to test... -->
+    <!--        TODO SWITCH "google maps api for api key in keys.js to test... -->
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
