@@ -1,3 +1,4 @@
+//commit
 // Initialize and add the mapfunction
 function initMap() {
   // The location of Uluru
