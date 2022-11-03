@@ -22,6 +22,7 @@ function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 15,
       center: user_Location,
+      
     });
     // The marker, positioned at user_Location
     const marker = new google.maps.Marker({
