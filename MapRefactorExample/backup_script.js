@@ -1,8 +1,9 @@
 //commit
 // Initialize and add the mapfunction
-serviceScript.setAttribute("src",`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`);
-
-
+serviceScript.setAttribute(
+  "src",
+  `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`
+);
 
 function initMap() {
   // The location of Uluru
@@ -30,7 +31,7 @@ function initMap() {
     //};
 
     //---------------------------CODE SAMPLE
-    debugger;
+   
     const service = new google.maps.places.PlacesService(map);
     let getNextPage;
     const moreButton = document.getElementById("more");
@@ -41,9 +42,10 @@ function initMap() {
       }
     };
     // Perform a nearby search.
+
     // TODO: Catch up with Dominque to add the buttons to this rearch
-    service.nearbySearch(
-      { location: user_Location, radius: 500, type: "store" },
+    service.textSearch(
+      { location: user_Location, radius: 500, query: "homeless shelter" },
       (results, status, pagination) => {
         if (status !== "OK" || !results) return;
         addPlaces(results, map);
@@ -84,7 +86,7 @@ function initMap() {
       }
     }
   }
-  debugger;
+ 
 
   //---------------------------CODE SAMPLE
 
