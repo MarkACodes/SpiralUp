@@ -27,7 +27,8 @@
 <body>
   <section>
     <div class="container d-flex justify-content-center" style="background-color: rgb(173, 194, 230)">
-      <h1 id="popoverData" data-content="Popover content" data-placement="bottom" data-trigger="hover" data-toggle="popover">Spiral Up</h1>
+
+      <h1  data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Spiral Up" data-content="Some content inside the popover">Spiral UP</h1>
     </div>
 
   </section>
@@ -69,18 +70,16 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
     integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
     crossorigin="anonymous"></script>
+    
   <div id="darkmodebutton">
     <button>Dark/Light Mode</button>
   </div>
+
   <script src="dark-mode-toggle.js"></script>
   <!-- <script src="./script.js"></script> -->
   <script type="module" src="./MapRefactorExample/backup_script.js"></script>
 
-  <script>
-    $(function() {
-      $('[data-toggle="popover"]').popover()
-    })
-  </script>
+
 </body>
 
 </html>
