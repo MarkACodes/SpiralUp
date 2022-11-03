@@ -27,22 +27,20 @@ button {
 
   
   #map {
-    flex-basis: 0;
-    flex-grow: 4;
+    /* flex-basis: 0; */
+    /* flex-grow: 4; */
     height: 100%;
 
   }
   
-  #container {
+  /* #container {
     height: 50%;
-    display: flex;
-
-    
-  }
+    display: flex;   
+  } */
   
   #sidebar {
     flex-basis: 5rem;
-    flex-grow: 1;
+    flex-grow: 2;
     padding: 1rem;
     max-width: 30rem;
     height: 100%;
