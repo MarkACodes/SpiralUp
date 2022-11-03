@@ -1,5 +1,9 @@
 //commit
 // Initialize and add the mapfunction
+serviceScript.setAttribute("src",`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`);
+
+
+
 function initMap() {
   // The location of Uluru
   // debugger;
