@@ -1,5 +1,3 @@
-//commit
-// Initialize and add the mapfunction
 serviceScript.setAttribute(
   "src",
   `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`
@@ -100,6 +98,12 @@ function initMap(itemsToQuery) {
 }
 initMap("homeless shelter");
 
-const buttonContainer = document.getElementById("btnContainer");
+// const buttonContainer = document.getElementById("btnContainer");
 
-buttonContainer.addEventListener((e) => {});
+btnContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn")) {
+    const getPlaces = e.target.innerText;
+    resultList.textContent = getPlaces;
+    initMap(getPlaces);
+  }
+});
