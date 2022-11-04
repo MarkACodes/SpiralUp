@@ -13,19 +13,19 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
     />
     <!--    link keys.js-->
-    <script rel="preload" src="keys.js" as="script"></script>
+    <script rel="preload" src="keys.js"></script>
     <!-- Pre-Load google maps service-->
     <script
       rel="preload"
       src="./MapRefactorExample/backup_script.js"
       as="script"
     ></script>
-    <script rel="preload" id="serviceScript"></script>
-    <script
+    <script  id="serviceScript"></script>
+    <!-- <script
       rel="preload"
       src="./MapRefactorExample/backup_script.js"
       as="script"
-    ></script>
+    ></script> -->
     <!--  link local stylesheet-->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -70,6 +70,9 @@
     <!--        TODO SWITCH "google maps api for api key in keys.js to test... -->
   </section>
  
+  <div id="darkmodebutton">
+    <button>Dark/Light Mode</button>
+  </div>
 
   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -78,9 +81,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
     integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
     crossorigin="anonymous"></script>
-  <div id="darkmodebutton">
-    <button>Dark/Light Mode</button>
-  </div>
   <script src="dark-mode-toggle.js"></script>
   <!-- <script src="./script.js"></script> -->
   <script type="module" src="./MapRefactorExample/backup_script.js"></script>
