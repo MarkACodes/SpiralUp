@@ -18,7 +18,7 @@ Below you will see a few back of paper sketches of what where we zeroed-in on wh
 We were convinced that we were on the right path, hence we digitized our design.
 
 <div>
-<img  src="./assets/README_IMAGES/Spiral-UP.png">  &nbsp; 
+<img  src="./assets/README_IMAGES/SpiralUpDraw.png">  &nbsp; 
 </div>
 
 ## MVP (Minimal Viable Product)
