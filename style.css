@@ -20,6 +20,10 @@ body {
   height: 40px;
 }
 
+#SpiralUpHeader {
+  display: inline-block;
+}
+
 #spiralUpDiv {
   background-color: #72efdd;
   /*background-color: steelblue;*/
