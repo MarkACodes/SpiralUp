@@ -5,7 +5,7 @@ serviceScript.setAttribute(
   `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`
 );
 
-function initMap() {
+function initMap(itemsToQuery) {
   // The location of Uluru
   // debugger;
 
@@ -22,7 +22,6 @@ function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 15,
       center: user_Location,
-      
     });
     // The marker, positioned at user_Location
     const marker = new google.maps.Marker({
@@ -32,7 +31,7 @@ function initMap() {
     //};
 
     //---------------------------CODE SAMPLE
-   
+
     const service = new google.maps.places.PlacesService(map);
     let getNextPage;
     const moreButton = document.getElementById("more");
@@ -46,7 +45,7 @@ function initMap() {
 
     // TODO: Catch up with Dominque to add the buttons to this rearch
     service.textSearch(
-      { location: user_Location, radius: 500, query: "homeless shelter" },
+      { location: user_Location, radius: 500, query: itemsToQuery },
       (results, status, pagination) => {
         if (status !== "OK" || !results) return;
         addPlaces(results, map);
@@ -63,6 +62,9 @@ function initMap() {
 
   function addPlaces(places, map) {
     const placesList = document.getElementById("places");
+    while (placesList.firstChild) {
+      placesList.removeChild(placesList.firstChild);
+    }
     for (const place of places) {
       if (place.geometry && place.geometry.location) {
         const image = {
@@ -87,7 +89,6 @@ function initMap() {
       }
     }
   }
- 
 
   //---------------------------CODE SAMPLE
 
@@ -97,4 +98,8 @@ function initMap() {
 
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 }
-initMap();
+initMap("homeless shelter");
+
+const buttonContainer = document.getElementById("btnContainer");
+
+buttonContainer.addEventListener((e) => {});
