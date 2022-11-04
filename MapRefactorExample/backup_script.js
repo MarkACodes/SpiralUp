@@ -4,7 +4,6 @@ serviceScript.setAttribute(
 );
 
 function initMap(itemsToQuery) {
-  // The location of Uluru
   // debugger;
 
   // Please note that the majority of our map code is within this successCallback function
@@ -13,7 +12,6 @@ function initMap(itemsToQuery) {
     //console.log(position);
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    //const lat_long = String(latitude) + "," + String(longitude); //Remove code  when able
 
     const user_Location = { lat: latitude, lng: longitude };
     // The map, centered at User_Location
@@ -26,9 +24,6 @@ function initMap(itemsToQuery) {
       position: user_Location,
       map: map,
     });
-    //};
-
-    //---------------------------CODE SAMPLE
 
     const service = new google.maps.places.PlacesService(map);
     let getNextPage;
@@ -39,9 +34,7 @@ function initMap(itemsToQuery) {
         getNextPage();
       }
     };
-    // Perform a nearby search.
 
-    // TODO: Catch up with Dominque to add the buttons to this rearch
     service.textSearch(
       { location: user_Location, radius: 500, query: itemsToQuery },
       (results, status, pagination) => {
@@ -88,8 +81,6 @@ function initMap(itemsToQuery) {
     }
   }
 
-  //---------------------------CODE SAMPLE
-
   const errorCallback = (error) => {
     console.log(error);
   };
@@ -104,6 +95,22 @@ btnContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn")) {
     const getPlaces = e.target.innerText;
     resultList.textContent = getPlaces;
-    initMap(getPlaces);
+
+    //initMap(getPlaces);
+
+    switch (getPlaces) {
+      case "Shelter":
+        initMap("homeless shelter");
+        break;
+      case "Food":
+        initMap("fast food");
+        break;
+      case "Hospital":
+        initMap("hospital");
+        break;
+      case "Library":
+        initMap("library");
+        break;
+    }
   }
 });
