@@ -112,10 +112,6 @@ btnContainer.addEventListener("click", (e) => {
       case " Shelter":
         initMap("homeless shelter");
         break;
-<<<<<<< HEAD
-
-=======
->>>>>>> 4aaf6b820077a2de4974e72ec1f9d29d6f4d2d0c
       case " Food":
         initMap("'food pantry' or 'soup kitchen'");
         break;
