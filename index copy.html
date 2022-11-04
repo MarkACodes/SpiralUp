@@ -20,7 +20,7 @@
       src="./MapRefactorExample/backup_script.js"
       as="script"
     ></script>
-    <script  id="serviceScript"></script>
+    <script id="serviceScript"></script>
     <!-- <script
       rel="preload"
       src="./MapRefactorExample/backup_script.js"
@@ -30,65 +30,78 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-<body>
-  <section>
-    <div class="container d-flex justify-content-center align-items-center" style="background-color:steelblue">
+  <body>
+    <section>
+      <div
+        class="container d-flex justify-content-center align-items-center rounded"
+        style="background-color: steelblue"
+      >
+        <h1
+          data-toggle="popover"
+          data-bs-trigger="hover"
+          data-placement="bottom"
+          title="Spiral up is an App to help Marginalized and Homeless Individuals find Shelter, Food and Opportunities. Using positive psychology and science to effectively help routines and opportunities for homeless people. We aim to be positive, but rub it against the constraints of reality and provide several pathways to attain the goal of a better future. Hence our slogan to “Spiral-UP” in life’s day to day."
+          data-bs-content=""
+        >
+          Spiral Up
+        </h1>
+        <img id="spiralUp" src="assets/SpiralUp2.png" />
+      </div>
+    </section>
 
-      <h1  data-toggle="popover" data-bs-trigger="hover" data-placement="bottom" 
-      title="Spiral up is an App to help Marginalized and Homeless Individuals find Shelter, Food and Opportunities. Using positive psychology and science to effectively help routines and opportunities for homeless people. We aim to be positive, but rub it against the constraints of reality and provide several pathways to attain the goal of a better future. Hence our slogan to “Spiral-UP” in life’s day to day." data-bs-content="">Spiral Up</h1> <img id="spiralUp" src="assets/SpiralUp2.png">
-    </div>
-  </section>
-
-
-  <section class="d-flex justify-content-center">
-    <div id="btnContainer" class="container d-flex justify-content-evenly m-5">
-      <button id="shelterBtn" class="btn btn-primary" type="submit">
-        Shelter
-      </button>
-      <button id="foodBtn" class="btn btn-primary" type="submit">Food
-      </button>
-      <button id="hospitalBtn" class="btn btn-primary" type="submit">
-        Hospital
-      </button>
-      <button id="libraryBtn" class="btn btn-primary" type="submit">
-        Library
-      </button>
-    </div>
-  </section>
+    <section class="d-flex justify-content-center">
+      <div
+        id="btnContainer"
+        class="container d-flex justify-content-evenly m-5"
+      >
+        <button id="shelterBtn" class="btn btn-primary" type="submit">
+          Shelter
+        </button>
+        <button id="foodBtn" class="btn btn-primary" type="submit">Food</button>
+        <button id="hospitalBtn" class="btn btn-primary" type="submit">
+          Hospital
+        </button>
+        <button id="libraryBtn" class="btn btn-primary" type="submit">
+          Library
+        </button>
+      </div>
+    </section>
 
     <section>
       <div class="container d-flex justify-content-center" id="container">
         <div class="row w-100">
-          <div class="col-md-8" id="map"></div>
+          <div class="col-md-8 rounded" id="map"></div>
 
-        <div class="col-md-4" id="sidebar">
-
-          <h2 id="resultList"  class="rounded">Results</h2>
-          <ul id="places"></ul>
-          <button id="more" class="rounded">Load more results</button>
+          <div class="col-md-4" id="sidebar">
+            <h2 id="resultList" class="rounded">Results</h2>
+            <ul id="places"></ul>
+            <button id="more" class="rounded">Load more results</button>
+          </div>
         </div>
       </div>
+
+      <!--        TODO SWITCH "google maps api for api key in keys.js to test... -->
+    </section>
+
+    <br />
+    <div id="darkmodebutton">
+      <button id="small-button" class="btn btn-primary" type="submit">
+        RedLight
+      </button>
     </div>
 
-    <!--        TODO SWITCH "google maps api for api key in keys.js to test... -->
-  </section>
- 
-<br>
-  <div id="darkmodebutton">
-    <button id="small-button" class="btn btn-primary" type="submit">RedLight</button>
-
-  </div>
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-    integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
-    crossorigin="anonymous"></script>
-  <script src="dark-mode-toggle.js"></script>
-  <!-- <script src="./script.js"></script> -->
-  <script type="module" src="./MapRefactorExample/backup_script.js"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
+    <script src="dark-mode-toggle.js"></script>
+    <!-- <script src="./script.js"></script> -->
+    <script type="module" src="./MapRefactorExample/backup_script.js"></script>
+  </body>
 </html>
