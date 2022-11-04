@@ -1,85 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-  />
-  <!--    link keys.js-->
-  <script src="keys.js"></script>
-<!--  link local stylesheet-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- REMOVE -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- REMOVE -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    />
+    <!--    link keys.js-->
+    <script rel="preload" src="keys.js"></script>
+    <!-- Pre-Load google maps service-->
+    <script rel="preload" src="./script.js" as="script"></script>
+    <script id="serviceScript"></script>
+    <script rel="preload" src="./script.js" as="script"></script>
+    <!--  link local stylesheet-->
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<section>
-  <div
-          class="container d-flex justify-content-center"
-          style="background-color: rgb(173, 194, 230)"
-  >
-    <h1>Spiral Up</h1>
-  </div>
-</section>
-<section class="d-flex justify-content-center">
-  <div
-          id="btnContainer"
-          class="container d-flex justify-content-evenly m-5"
-  >
-    <button id="shelterBtn" class="btn btn-primary" type="submit">
-      Shelter
-    </button>
-    <button id="foodBtn" class="btn btn-primary" type="submit">Food</button>
-    <button id="hospitalBtn" class="btn btn-primary" type="submit">
-      Hospital
-    </button>
-    <button id="libraryBtn" class="btn btn-primary" type="submit">
-      Library
-    </button>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <iframe
-            width="100%"
-            height="450"
-            style="border: 0"
-            loading="lazy"
-            allowfullscreen
-            id="mapFrame"
-    ></iframe>
-  </div>
-  <!--        TODO SWITCH "google maps api for api key in keys.js to test... -->
-</section>
-<section>
-  <div class="container">
-    <ul class="list-group">
-      <li class="list-group-item active" aria-current="true">
-        An active item
-      </li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-      <li class="list-group-item">A fourth item</li>
-      <li class="list-group-item">And a fifth one</li>
-    </ul>
-  </div>
-</section>
-<script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"
-></script>
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
-        crossorigin="anonymous"
-></script>
-<div id="darkmodebutton">
-  <button>Dark/Light Mode</button>
-</div>
-<script src="dark-mode-toggle.js"></script>
-<script src="./script.js"></script>
-</body>
+    <!--    FONT AWESOME LINK HERE IN HEAD-->
+    <script
+      src="https://kit.fontawesome.com/5ce3be0b72.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <section>
+      <div
+        class="container d-flex justify-content-center align-items-center rounded"
+        style="background-color: steelblue"
+      >
+        <h1
+          id="SpiralUpHeader"
+          data-toggle="popover"
+          data-bs-trigger="hover"
+          data-placement="bottom"
+          title="Spiral up is an App to help Marginalized and Homeless Individuals find Shelter, Food and Opportunities. Using positive psychology and science to effectively help routines and opportunities for homeless people. We aim to be positive, but rub it against the constraints of reality and provide several pathways to attain the goal of a better future. Hence our slogan to “Spiral-UP” in life’s day to day."
+          data-bs-content=""
+        >
+          Spiral Up
+        </h1>
+        <img id="spiralUp" src="assets/SpiralUp2.png" />
+      </div>
+    </section>
+
+    <section class="d-flex justify-content-center">
+      <div
+        id="btnContainer"
+        class="container d-flex justify-content-evenly m-5"
+      >
+        <button id="shelterBtn" class="btn btn-primary" type="submit">
+          <i class="fa-solid fa-person-shelter"></i> Shelter
+        </button>
+        <button id="foodBtn" class="btn btn-primary" type="submit">
+          <i class="fa-solid fa-bowl-food"></i> Food
+        </button>
+        <button id="hospitalBtn" class="btn btn-primary" type="submit">
+          <i class="fa-regular fa-hospital"></i>
+          Hospital
+        </button>
+        <button id="libraryBtn" class="btn btn-primary" type="submit">
+          <i class="fa-solid fa-book-atlas"></i>
+          Library
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <div class="container d-flex justify-content-center" id="container">
+        <div class="row w-100">
+          <div class="col-md-8 rounded" id="map"></div>
+
+          <div class="col-md-4" id="sidebar">
+            <h2 id="resultList" class="rounded">
+              <i class="fa-solid fa-list-check"></i> Results
+            </h2>
+            <ul id="places"></ul>
+            <button id="more" class="rounded">
+              <i class="fa-solid fa-angles-right"></i> Load more results
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--        TODO SWITCH "google maps api for api key in keys.js to test... -->
+    </section>
+
+    <br />
+    <div id="darkmodebutton">
+      <button id="small-button" class="btn btn-primary" type="submit">
+        <i class="fa-solid fa-sun"></i>
+        RedLight
+      </button>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
+    <script src="dark-mode-toggle.js"></script>
+    <!-- <script src="./script.js"></script> -->
+    <script type="module" src="./script.js"></script>
+  </body>
 </html>

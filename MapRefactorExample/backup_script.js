@@ -17,10 +17,10 @@ function initMap(itemsToQuery) {
     // The map, centered at User_Location
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 13,
-      mapId: 'd2fddb4cdc51e0d6', // Night Travel custom MapId
+      mapId: "d2fddb4cdc51e0d6", // Night Travel custom MapId
       center: user_Location,
     });
-    
+
     //TODO: create a way for user to select between two mapIds
 
     // const darkMap = new google.maps.Map(document.getElementById("map"), {
