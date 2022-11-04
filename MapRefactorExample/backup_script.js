@@ -16,7 +16,7 @@ function initMap(itemsToQuery) {
     const user_Location = { lat: latitude, lng: longitude };
     // The map, centered at User_Location
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 15,
+      zoom: 13,
       center: user_Location,
     });
     // The marker, positioned at user_Location
