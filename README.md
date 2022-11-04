@@ -34,7 +34,7 @@ We managed to build what we set out to do, but the map features were not very po
 So we decided to take the challenge, and build our map ourselves, with the help of the Google Places API. This enabled us to fully customize how our map would display, and furthermore enabled us to provide our users with accurate searches.
 
 <div>
-<img  src="./assets/README_IMAGES/theGoat.png" width="750">  &nbsp; 
+<img  src="./assets/README_IMAGES/TheGOAT.png" width="750">  &nbsp; 
 </div>
 
 # Please Join our Project
