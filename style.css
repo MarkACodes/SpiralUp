@@ -1,11 +1,14 @@
 body {
     /*padding:0% 3% 10% 3%;*/
     text-align: center;
+    background-image: url("");
+    ;
 }
 
 h1 {
-    color: darkgreen;
+    color: rgb(147, 8, 8);
     margin-top: 30px;
+    
 }
 
 button {
@@ -13,7 +16,10 @@ button {
     border: 1px solid #444;
     text-align: center;
     padding: 6px;
-    margin-left: 10px;
+   }
+
+.btn {background-color: #ae620c;
+      font-size:30px;
 }
 
 .dark {
@@ -27,18 +33,20 @@ button {
 
   
   #map {
-    /* flex-basis: 0; */
-    /* flex-grow: 4; */
+     flex-basis: 0; 
+     flex-grow: 4; 
     height: 100%;
 
   }
   
-  /* #container {
+   container {
     height: 50%;
-    display: flex;   
-  } */
+    display: flex; 
+  } 
   
   #sidebar {
+    display: flex;
+    flex-direction: column;
     flex-basis: 5rem;
     flex-grow: 2;
     padding: 1rem;
@@ -46,13 +54,12 @@ button {
     height: 100%;
     box-sizing: border-box;
     overflow: auto;
+    text-align:left  ;
   }
-  
-  #sidebar {
-    display: flex;
-    flex-direction: column;
+   
+  #more { background-color: #72efdd;
+
   }
-  
   ul {
     list-style-type: none;
     padding: 0;
@@ -62,7 +69,7 @@ button {
   }
   
   li {
-    background-color: #f1f1f1;
+    background-color: #cbf3f0;
     padding: 10px;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -72,5 +79,5 @@ button {
   }
   
   li:nth-child(odd) {
-    background-color: #fcfcfc;
+    background-color: #cbdfbd;
   }
