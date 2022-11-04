@@ -17,19 +17,8 @@ function initMap(itemsToQuery) {
     // The map, centered at User_Location
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 13,
-      mapId: 'd2fddb4cdc51e0d6',   // Can comment out to turn off Dark Mode
       center: user_Location,
     });
-    // const mapDark = new google.maps.Map(document.getElementById("map"), {
-    //   zoom: 13,
-    //   mapId: '3b79c39f1236edae',
-    //   center: user_Location,
-    // });
-    //const map2 = new google.maps.Map(document.getElementById("map"), {
-    //   zoom: 15,
-    //   mapId: '35eb1a852af428ac',  // THIS IS MARK'S MAP ID: TODO: Finish Customization
-    //   center: user_Location,
-    // });
     // The marker, positioned at user_Location
     const marker = new google.maps.Marker({
       position: user_Location,
