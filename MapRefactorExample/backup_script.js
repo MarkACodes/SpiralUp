@@ -16,7 +16,7 @@ function initMap(itemsToQuery) {
     const user_Location = { lat: latitude, lng: longitude };
     // The map, centered at User_Location
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 13,
+      zoom: 15,
       center: user_Location,
     });
     // The marker, positioned at user_Location
@@ -82,7 +82,8 @@ function initMap(itemsToQuery) {
   }
 
   const errorCallback = (error) => {
-    console.log(error);
+    //console.log(error);
+    alert('Please allow location services for the app to work.');
   };
 
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
@@ -103,7 +104,7 @@ btnContainer.addEventListener("click", (e) => {
         initMap("homeless shelter");
         break;
       case "Food":
-        initMap("'food pantry' or 'soup kitchen'");
+        initMap("fast food");
         break;
       case "Hospital":
         initMap("hospital");
