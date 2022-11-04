@@ -35,8 +35,9 @@
 
 <body>
   <section>
-    <div class="container d-flex justify-content-center" style="background-color: rgb(173, 194, 230)">
-      <h1>Spiral Up</h1>
+    <div class="container d-flex justify-content-center align-items-center" style="background-color:#72efdd">
+      <h1  data-toggle="popover" data-bs-trigger="hover" data-placement="bottom" 
+      title="Spiral up is an App to help Marginalized and Homeless Individuals find Shelter, Food and Opportunities. Using positive psychology and science to effectively help routines and opportunities for homeless people. We aim to be positive, but rub it against the constraints of reality and provide several pathways to attain the goal of a better future. Hence our slogan to “Spiral-UP” in life’s day to day." data-bs-content="">Spiral UP</h1> <img src="https://spiraleffects.com/wp-content/uploads/spiral.png" width=60px>
     </div>
   </section>
   <section class="d-flex justify-content-center">
@@ -60,7 +61,7 @@
           <div class="col-md-8" id="map"></div>
 
         <div class="col-md-4" id="sidebar">
-          <h2>Results</h2>
+          <h2 id="resultList" style="background-color:#72efdd">Results</h2>
           <ul id="places"></ul>
           <button id="more">Load more results</button>
         </div>
@@ -68,19 +69,9 @@
 
     <!--        TODO SWITCH "google maps api for api key in keys.js to test... -->
   </section>
-  <section>
-    <div class="container">
-      <ul class="list-group">
-        <li class="list-group-item active" aria-current="true">
-          An active item
-        </li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
-      </ul>
-    </div>
-  </section>
+ 
+
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>
