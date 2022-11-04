@@ -1,12 +1,9 @@
-//commit
-// Initialize and add the mapfunction
 serviceScript.setAttribute(
   "src",
   `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`
 );
 
-function initMap() {
-  // The location of Uluru
+function initMap(itemsToQuery) {
   // debugger;
 
   // Please note that the majority of our map code is within this successCallback function
@@ -15,7 +12,6 @@ function initMap() {
     //console.log(position);
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    //const lat_long = String(latitude) + "," + String(longitude); //Remove code  when able
 
     const user_Location = { lat: latitude, lng: longitude };
     // The map, centered at User_Location
@@ -28,10 +24,7 @@ function initMap() {
       position: user_Location,
       map: map,
     });
-    //};
 
-    //---------------------------CODE SAMPLE
-   
     const service = new google.maps.places.PlacesService(map);
     let getNextPage;
     const moreButton = document.getElementById("more");
@@ -41,11 +34,9 @@ function initMap() {
         getNextPage();
       }
     };
-    // Perform a nearby search.
 
-    // TODO: Catch up with Dominque to add the buttons to this rearch
     service.textSearch(
-      { location: user_Location, radius: 500, query: "homeless shelter" },
+      { location: user_Location, radius: 500, query: itemsToQuery },
       (results, status, pagination) => {
         if (status !== "OK" || !results) return;
         addPlaces(results, map);
@@ -62,6 +53,9 @@ function initMap() {
 
   function addPlaces(places, map) {
     const placesList = document.getElementById("places");
+    while (placesList.firstChild) {
+      placesList.removeChild(placesList.firstChild);
+    }
     for (const place of places) {
       if (place.geometry && place.geometry.location) {
         const image = {
@@ -86,9 +80,6 @@ function initMap() {
       }
     }
   }
- 
-
-  //---------------------------CODE SAMPLE
 
   const errorCallback = (error) => {
     console.log(error);
@@ -96,4 +87,30 @@ function initMap() {
 
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 }
-initMap();
+initMap("homeless shelter");
+
+// const buttonContainer = document.getElementById("btnContainer");
+
+btnContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn")) {
+    const getPlaces = e.target.innerText;
+    resultList.textContent = getPlaces;
+
+    //initMap(getPlaces);
+
+    switch (getPlaces) {
+      case "Shelter":
+        initMap("homeless shelter");
+        break;
+      case "Food":
+        initMap("fast food");
+        break;
+      case "Hospital":
+        initMap("hospital");
+        break;
+      case "Library":
+        initMap("library");
+        break;
+    }
+  }
+});
