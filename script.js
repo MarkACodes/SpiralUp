@@ -5,51 +5,61 @@ const mapUrl = `https://www.google.com/maps/embed/v1/search?q=${shelter}&key=${G
 mapFrame.setAttribute("src", mapUrl);
 
 debugger;
+
 function setMapQuery(places) {
-  const successCallback = (position) => {
-    //console.log(position);
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-    const lat_long = String(latitude) + "," + String(longitude);
+    const successCallback = (position) => {
+        //console.log(position);
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const lat_long = String(latitude) + "," + String(longitude);
 
-    mapFrame.setAttribute(
-        "src",
-        `https://www.google.com/maps/embed/v1/search?q=${places}&key=${GOOGLE_MAPS_API_KEY}&center=${lat_long}&zoom=15`
-    );
-  };
+        mapFrame.setAttribute(
+            "src",
+            `https://www.google.com/maps/embed/v1/search?q=${places}&key=${GOOGLE_MAPS_API_KEY}&center=${lat_long}&zoom=15`
+        );
+    };
 
-  const errorCallback = (error) => {
-    console.log(error);
-  };
+    const errorCallback = (error) => {
+        console.log(error);
+    };
 
-  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
 }
 
 btnContainer.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn")) {
-    const getPlaces = e.target.innerText;
-    setMapQuery(getPlaces);
-  }
+    if (e.target.classList.contains("btn")) {
+        const getPlaces = e.target.innerText;
+        setMapQuery(getPlaces);
+    }
 });
 
 
 // TODO: see how to optimize this code
 const successCallback = (position) => {
-  console.log(position);
-  const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
+    console.log(position);
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
 
-  const lat_long = String(latitude) + "," + String(longitude);
+    const lat_long = String(latitude) + "," + String(longitude);
 
-  mapFrame.setAttribute(
-      "src",
-      `https://www.google.com/maps/embed/v1/search?q=${shelter}&key=${GOOGLE_MAPS_API_KEY}&center=${lat_long}&zoom=15`
-  );
+    mapFrame.setAttribute(
+        "src",
+        `https://www.google.com/maps/embed/v1/search?q=${shelter}&key=${GOOGLE_MAPS_API_KEY}&center=${lat_long}&zoom=15`
+    );
 };
 
 const errorCallback = (error) => {
-  console.log(error);
+    console.log(error);
 };
 
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+
+//quick website improvements
+//detect dark mode
+
+const isDarkMode = () => {
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+};
