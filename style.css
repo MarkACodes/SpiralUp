@@ -124,6 +124,6 @@ li:nth-child(odd) {
 
 
 /*outline*/
-* {
-  outline: dashed red;
-}
+/** {*/
+/*  outline: dashed red;*/
+/*}*/

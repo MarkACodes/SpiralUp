@@ -99,16 +99,16 @@ btnContainer.addEventListener("click", (e) => {
     //initMap(getPlaces);
 
     switch (getPlaces) {
-      case "Shelter":
+      case " Shelter":
         initMap("homeless shelter");
         break;
-      case "Food":
+      case " Food":
         initMap("'food pantry' or 'soup kitchen'");
         break;
-      case "Hospital":
+      case " Hospital":
         initMap("hospital");
         break;
-      case "Library":
+      case " Library":
         initMap("library");
         break;
     }
