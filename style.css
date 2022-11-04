@@ -109,7 +109,7 @@ ul {
 }
 
 li {
-  background-color: #cbf3f0;
+  background-color: #ff9b54;
   padding: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -119,11 +119,11 @@ li {
 }
 
 li:nth-child(odd) {
-  background-color: #cbdfbd;
+  background-color: #73bfb8;
 }
 
 
 /*outline*/
-* {
+/* * {
   outline: dashed red;
-}
+} */
