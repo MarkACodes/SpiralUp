@@ -28,6 +28,9 @@
     ></script> -->
     <!--  link local stylesheet-->
     <link rel="stylesheet" href="style.css" />
+<!--    FONT AWESOME LINK HERE IN HEAD-->
+    <script src="https://kit.fontawesome.com/5ce3be0b72.js" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
@@ -43,7 +46,7 @@
           title="Spiral up is an App to help Marginalized and Homeless Individuals find Shelter, Food and Opportunities. Using positive psychology and science to effectively help routines and opportunities for homeless people. We aim to be positive, but rub it against the constraints of reality and provide several pathways to attain the goal of a better future. Hence our slogan to “Spiral-UP” in life’s day to day."
           data-bs-content=""
         >
-          Spiral Up
+            Spiral Up
         </h1>
         <img id="spiralUp" src="assets/SpiralUp2.png" />
       </div>
@@ -55,13 +58,13 @@
         class="container d-flex justify-content-evenly m-5"
       >
         <button id="shelterBtn" class="btn btn-primary" type="submit">
-          Shelter
+          <i class="fa-solid fa-person-shelter"></i> Shelter
         </button>
-        <button id="foodBtn" class="btn btn-primary" type="submit">Food</button>
-        <button id="hospitalBtn" class="btn btn-primary" type="submit">
+        <button id="foodBtn" class="btn btn-primary" type="submit"><i class="fa-solid fa-bowl-food"></i> Food</button>
+        <button id="hospitalBtn" class="btn btn-primary" type="submit"> <i class="fa-regular fa-hospital"></i> 
           Hospital
         </button>
-        <button id="libraryBtn" class="btn btn-primary" type="submit">
+        <button id="libraryBtn" class="btn btn-primary" type="submit"> <i class="fa-solid fa-book-atlas"></i>
           Library
         </button>
       </div>
@@ -73,9 +76,9 @@
           <div class="col-md-8 rounded" id="map"></div>
 
           <div class="col-md-4" id="sidebar">
-            <h2 id="resultList" class="rounded">Results</h2>
+            <h2 id="resultList" class="rounded"><i class="fa-solid fa-list-check"></i> Results</h2>
             <ul id="places"></ul>
-            <button id="more" class="rounded">Load more results</button>
+            <button id="more" class="rounded"><i class="fa-solid fa-angles-right"></i> Load more results</button>
           </div>
         </div>
       </div>
@@ -85,7 +88,7 @@
 
     <br />
     <div id="darkmodebutton">
-      <button id="small-button" class="btn btn-primary" type="submit">
+      <button id="small-button" class="btn btn-primary" type="submit"> <i class="fa-solid fa-sun"></i>
         RedLight
       </button>
     </div>
